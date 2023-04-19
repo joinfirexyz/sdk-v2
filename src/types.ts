@@ -78,6 +78,7 @@ export interface ContractMethods {
   call: (additionalOverrides?: Overrides) => Promise<ContractTransaction>;
   estimateGas: (additionalOverrides?: Overrides) => Promise<BigNumber>;
   callStatic: (additionalOverrides?: Overrides) => Promise<any>;
+  populateTransaction: (additionalOverrides?: Overrides) => Promise<ethers.PopulatedTransaction>;
 }
 
 /** Return type for strategyInfo */

@@ -64,6 +64,11 @@ export const executeTakerAsk = (
         ...overrides,
         ...additionalOverrides,
       }),
+    populateTransaction: (additionalOverrides?: PayableOverrides) =>
+      contract.populateTransaction.executeTakerAsk(taker, maker, makerSignature, merkleTree, affiliate, {
+        ...overrides,
+        ...additionalOverrides,
+      }),
   };
 };
 
@@ -100,6 +105,11 @@ export const executeMultipleTakerBids = (
       }),
     callStatic: (additionalOverrides?: PayableOverrides) =>
       contract.callStatic.executeMultipleTakerBids(taker, maker, makerSignature, merkleTree, affiliate, isAtomic, {
+        ...overridesWithValue,
+        ...additionalOverrides,
+      }),
+    populateTransaction: (additionalOverrides?: PayableOverrides) =>
+      contract.populateTransaction.executeMultipleTakerBids(taker, maker, makerSignature, merkleTree, affiliate, isAtomic, {
         ...overridesWithValue,
         ...additionalOverrides,
       }),
